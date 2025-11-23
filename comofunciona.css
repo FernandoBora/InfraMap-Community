@@ -1,0 +1,356 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body e html ocupam 100% da altura da tela */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: #dadada;
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: rgb(128, 105, 105); /* ajuste conforme o header */
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: rgb(141, 122, 122); /* ajuste conforme o header */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* controla o espaçamento entre Entrar, | e Cadastrar */
+}
+
+.site-title a {
+  text-decoration: none; /* remove o sublinhado */
+  color: inherit;        /* usa a cor do h1 */
+}
+.site-title a:hover {
+  opacity: 0.8; /* efeito leve no hover */
+}
+
+
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #1a1a1a;
+}
+
+@media (max-width: 768px) { .nav { display: none; } }
+  .main {
+margin:64px;
+padding: 20px;
+
+  }
+
+.título {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.bagulhos { 
+    display: flex;
+    margin: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+}
+.bagulhos p{
+    text-align: left;
+}
+
+.coluna-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-basis: 35%;
+    min-width: 30%;
+    max-width: 50%;
+}
+
+.coluna-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-basis: 65%;    /* Aumenta a largura base */
+    min-width: 350px;   /* Aumenta o mínimo */
+    max-width: 70%;     /* Limita o máximo */
+}
+
+.bagulho1 {
+    background-color: #ffffff;
+    padding: 2%;
+    margin: 5px;
+    max-width: 100%; 
+    flex-basis: 30%; 
+    min-width: 30%;  
+    flex-shrink: 0;  
+    max-height: fit-content;
+    border: 1px solid grey;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 2%;
+}
+
+
+
+.bagulho2 {
+    background-color: #ffffff;
+    padding: 2%;
+    margin: 5px;
+    max-width: 100%;  /* Limite máximo */
+    flex-basis: 100%;  /* Tamanho base */
+    min-width: 30%;  /* Mínimo */
+    flex-shrink: 0;
+    border: 1px solid grey;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.bagulho2 img {
+  
+    border-radius: 15px;
+}
+
+
+
+  /* Footer */
+.footer {
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    padding: 48px 0;
+
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  
+  .footer-brand {
+    max-width: 300px;
+  }
+  
+  .footer-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .footer-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .footer-brand-name {
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  
+  .footer-description {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .footer-title {
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+  }
+  
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-link:hover {
+    color: #1a1a1a;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  @media (min-width: 640px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  .footer-copyright {
+    color: #6b7280;
+    font-size: 14px;
+  }
+  
+  .footer-legal {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .footer-legal-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-legal-link:hover {
+    color: #1a1a1a;
+  }
+  

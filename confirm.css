@@ -1,0 +1,96 @@
+:root{
+  --bg:#f5f5f6;
+  --panel:#111;
+  --panel-2:#1b1b1b;
+  --muted:#6b6b6b;
+  --text:#111;
+  --accent:#222;
+  --accent-2:#000;
+  --white:#ffffff;
+  --glass: rgba(255,255,255,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#efefef);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.btn-voltar {
+  position: fixed;       
+  top: 15px;             
+  left: 15px;            
+  background: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.btn-voltar:hover {
+  background: #333;
+}
+
+/* Layout*/
+body.simple-layout{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.825), rgba(255, 255, 255, 0)), url('https://cdn.pixabay.com/photo/2015/12/30/03/40/landscape-1113728_1280.jpg');
+  background-repeat: no-repeat;
+  margin:0;
+  background-size: cover;
+}
+
+
+
+
+.confirmar{
+  display: grid;
+  width:100%;
+  max-width:520px;
+  background:var(--white);
+  border-radius:12px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(16,24,40,0.06);
+  border:1px solid #e8e8e8;
+  justify-content: center;
+
+}
+h2{margin:0 0 8px 0;font-size:1.25rem; text-align: center;}
+.muted{color: black}
+
+
+/* buttons */
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:8px;
+  border:1px solid #000000;
+  background:transparent;
+  cursor:pointer;
+  font-weight:600;
+  font-size:0.95rem;
+  color:white;
+  text-decoration:none;
+}
+.btn.primary{
+  background:#000000;
+  color: white;
+  border-color:transparent;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+}
+
+  

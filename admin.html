@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Administrador - InfraMap</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+  
+  <h1 class="titulo">Painel do Administrador</h1>
+  <div class="header-buttons">
+    <a href="index.html" class="action-btn">Voltar</a>
+    <button id="logout-btn" class="logout-btn">Sair</button>
+  </div>
+</header>
+
+
+  <nav class="admin-nav">
+    <button class="tab-btn active" data-tab="reports-section">Denúncias</button>
+    <button class="tab-btn" data-tab="users-section">Usuários</button>
+  </nav>
+
+  <main>
+    <section id="reports-section" class="tab-section active">
+      <h2>📋 Denúncias</h2>
+      <div id="reports-list" class="list-container">
+        <p>Carregando denúncias...</p>
+      </div>
+    </section>
+
+    <section id="users-section" class="tab-section">
+      <h2>👤 Usuários</h2>
+      <div id="users-list" class="list-container">
+        <p>Carregando usuários...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>InfraMap © 2025</p>
+  </footer>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

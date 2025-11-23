@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inframap - Sobre</title>
+  <meta name="description" content="Inframap é uma plataforma colaborativa que conecta comunidades com infraestrutura local e recursos cívicos.">
+  <link rel="stylesheet" href="sobre.css">
+  <link rel="icon" type="image" href="preview.png">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo">
+              <a href="index.html">
+                <img src="preview.png" alt="Logo do Inframap">
+              </a>
+            </div>
+
+            <h1 class="site-title">
+              <a href="index.html">Inframap</a>
+            </h1>
+
+          </div>
+          <nav class="nav">
+            <a href="Sobre.html" target="_blank" class="nav-link">Sobre</a>
+            <a href="Contato.html" target="_blank" class="nav-link">Contato</a>
+
+            <!-- Menu para usuários deslogados -->
+            <div class="auth-links" id="auth-links">
+              <a href="Login.html" class="nav-link">Entrar</a>
+              <a class="nav-link">|</a>
+              <a href="Cadastro.html" class="nav-link">Cadastrar</a>
+            </div>
+
+            <!-- Menu para usuários logados -->
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <button id="user-button" class="user-button">Olá, <span id="user-greeting"></span> ▼</button>
+              <div class="dropdown-content" id="dropdown-content">
+                <a href="minhaConta.html">Minha Conta</a>
+                <a href="denuncias.html">Minhas Denúncias</a>
+                <a href="#" id="logout-btn">Sair</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+  <!-- ================= CONTEÚDO CENTRAL ================= -->
+ <main class="main-content">
+    <section>
+      <h2>Sobre o InfraMap</h2>
+      <p>O InfraMap é uma plataforma colaborativa desenvolvida como parte de um Trabalho de Conclusão de Curso (TCC), com foco na identificação e gestão de problemas urbanos no município de Araucária – PR.</p>
+
+      <p>O sistema foi criado com o objetivo de oferecer à população um canal simples e acessível para registrar ocorrências, como buracos em ruas, falta de iluminação pública, lixo acumulado, vazamentos de água, semáforos quebrados e áreas perigosas não sinalizadas.</p>
+
+      <p>Cada ocorrência é registrada no mapa interativo e exibida com um ícone específico, permitindo a visualização clara das demandas em diferentes regiões da cidade. Além disso, os usuários podem filtrar problemas por categoria, acessar informações detalhadas de cada relato (descrição, data, hora, nome do autor e fotos) e acompanhar o status das situações reportadas.</p>
+
+      <p>O InfraMap utiliza o Supabase como banco de dados, garantindo segurança, armazenamento estruturado e eficiência no gerenciamento das informações.</p>
+
+      <p>O propósito do projeto é fortalecer a participação cidadã, facilitar a comunicação entre moradores e órgãos responsáveis, e contribuir para uma cidade mais organizada, transparente e sustentável.</p>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo-section">
+            <div class="footer-logo"><img src="preview.png" alt="icone"></div>
+            <span class="footer-brand-name">Inframap</span>
+          </div>
+          <p class="footer-description">
+            Conectando comunidades através de tecnologia cívica inovadora e soluções colaborativas.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Plataforma</h4>
+          <ul class="footer-links">
+            <li><a href="comofunciona.html" class="footer-link">Como Funciona</a></li>
+            <li><a href="Recursos.html" class="footer-link">Recursos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Comunidade</h4>
+          <ul class="footer-links">
+            <li><a href="https://discord.gg/ZUr34wJuPr" class="footer-link">Suporte</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Conectar</h4>
+          <ul class="footer-links">
+            <li><a href="Contato.html" class="footer-link">Contato</a></li>
+            <li><a href="https://www.instagram.com/inframaparaucaria/" class="footer-link">Redes Sociais</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 Inframap. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="Politica.html" class="footer-legal-link">Privacidade</a>
+          <a href="Termos.html" class="footer-legal-link">Termos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="menuAuth.js"></script>
+</body>
+</html>

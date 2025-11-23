@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inframap - Cadastro</title>
+  <link rel="stylesheet" href="Cadastro.css" />
+  <link rel="icon" type="image" href="preview.png">
+</head>
+<body class="simple-layout">
+  <main class="form-only">
+    <a href="index.html" class="btn-voltar">↩ Voltar</a>
+    <div class="form-inner">
+      <h2>Criar Conta</h2>
+      <p class="muted">Preencha os dados abaixo para se cadastrar.</p>
+
+      <form class="login-form" action="#" method="post" novalidate>
+        <label for="name">Nome completo</label>
+        <input id="name" name="name" type="text" placeholder="Seu nome" required autocomplete="name">
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required autocomplete="email">
+
+        <label for="password">Senha</label>
+        <input id="password" name="password" type="password" placeholder="Crie uma senha" required autocomplete="new-password">
+
+        <label for="confirm">Confirmar senha</label>
+        <input id="confirm" name="confirm" type="password" placeholder="Repita a senha" required autocomplete="new-password">
+
+        <button type="submit" class="btn primary">Cadastrar</button>
+
+        <div class="or">OU</div>
+
+        <div class="actions">
+          <a href="Login.html" class="btn ghost">Já tenho conta</a>
+        </div>
+      </form>
+      <p class="foot muted">Ao criar sua conta, você concorda com nossos <a href="Termos.html">Termos de Uso</a> e <a href="Politica.html">Política de Privacidade</a>.</p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="Main.js"></script>
+</body>
+</html>

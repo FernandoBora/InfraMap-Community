@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta - Inframap</title>
+  <link rel="stylesheet" href="minhaConta.css">
+  <link rel="icon" type="image" href="preview.png">
+</head>
+<body>
+  <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo">
+              <a href="index.html">
+                <img src="preview.png" alt="Logo do Inframap">
+              </a>
+            </div>
+
+            <h1 class="site-title">
+              <a href="index.html">Inframap</a>
+            </h1>
+
+          </div>
+          <nav class="nav">
+            <a href="Sobre.html" target="_blank" class="nav-link">Sobre</a>
+            <a href="Contato.html" target="_blank" class="nav-link">Contato</a>
+
+            <!-- Menu para usuários deslogados -->
+            <div class="auth-links" id="auth-links">
+              <a href="Login.html" class="nav-link">Entrar</a>
+              <a class="nav-link">|</a>
+              <a href="Cadastro.html" class="nav-link">Cadastrar</a>
+            </div>
+
+            <!-- Menu para usuários logados -->
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <button id="user-button" class="user-button">Olá, <span id="user-greeting"></span> ▼</button>
+              <div class="dropdown-content" id="dropdown-content">
+                <a href="minhaConta.html">Minha Conta</a>
+                <a href="denuncias.html">Minhas Denúncias</a>
+                <a href="#" id="logout-btn">Sair</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+  <main class="content-wrapper">
+    <div class="container account-container">
+      <h2>Minha Conta</h2>
+
+      <!-- Informações do usuário -->
+      <section class="account-section" id="user-info">
+        <h3>Informações do Usuário</h3>
+        <p><strong>Nome:</strong> <span id="user-name"></span></p>
+        <p><strong>Email:</strong> <span id="user-email"></span></p>
+        <p><strong>Data de cadastro:</strong> <span id="user-created"></span></p>
+      </section>
+
+      <!-- Alterar senha -->
+      
+
+      <!-- Deletar conta -->
+      <section class="account-section">
+        <h3>Deletar Conta</h3>
+        <button id="delete-account-btn" class="delete-btn">Deletar Conta</button>
+      </section>
+    </div>
+  </main>
+
+ <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo-section">
+            <div class="footer-logo"><img src="image/TCC logo.png" alt="icone"></div>
+            <span class="footer-brand-name">Inframap</span>
+          </div>
+          <p class="footer-description">
+            Conectando comunidades através de tecnologia cívica inovadora e soluções colaborativas.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Plataforma</h4>
+          <ul class="footer-links">
+            <li><a href="comofunciona.html" class="footer-link">Como Funciona</a></li>
+            <li><a href="Recursos.html" class="footer-link">Recursos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Comunidade</h4>
+          <ul class="footer-links">
+            <li><a href="https://discord.gg/ZUr34wJuPr" class="footer-link">Suporte</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Conectar</h4>
+          <ul class="footer-links">
+            <li><a href="Contato.html" class="footer-link">Contato</a></li>
+            <li><a href="https://www.instagram.com/inframaparaucaria/" class="footer-link">Redes Sociais</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 Inframap. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="Politica.html" class="footer-legal-link">Privacidade</a>
+          <a href="Termos.html" class="footer-legal-link">Termos</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script type="module" src="minhaConta.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="menuAuth.js"></script>
+</body>
+</html>

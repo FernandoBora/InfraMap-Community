@@ -1,0 +1,94 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.868)), url(https://cdn.pixabay.com/photo/2015/12/30/03/40/landscape-1113728_1280.jpg);;
+  background-repeat: no-repeat;
+  margin: 0;
+  background-size: cover;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Container central */
+.forgot-password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Card do formulário */
+.forgot-password-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.forgot-password-card h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.forgot-password-card p {
+  margin-bottom: 2rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.forgot-password-card input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.forgot-password-card input:focus {
+  border-color: #2575fc;
+  outline: none;
+}
+
+.forgot-password-card button {
+  width: 100%;
+  padding: 12px;
+  background-color: #000102;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.forgot-password-card button:hover {
+  background-color: #000000;
+}
+
+.back-login {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #003797;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-login:hover {
+  text-decoration: underline;
+}

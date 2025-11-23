@@ -1,0 +1,663 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Fontes */
+    background-color: white;
+    color: black;
+    line-height: 1.6;
+}
+
+* { /* Reset básico */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: rgb(128, 105, 105); /* ajuste conforme o header */
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: rgb(141, 122, 122); /* ajuste conforme o header */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* controla o espaçamento entre Entrar, | e Cadastrar */
+}
+
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.container { /* Como um container se comporta */
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+main {
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.mapatlgd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* cabeçaio */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e5e7eb;
+    position: static;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.report-now-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    margin-left:5%;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    z-index: 100;
+}
+
+.report-now-btn:hover {
+    background-color: #2563eb;
+    
+}
+
+@media (max-width: 768px) {
+    .report-now-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+#register { 
+    font-size: 14px;
+border: 1px solid #e2e8f0;
+background-color: #fafafa;
+padding: 7px;
+border-radius: 8px;
+margin-right: -16px;
+}
+
+#login { 
+    border: 1px solid #e2e8f0;
+    background-color: #fafafa;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 100;
+    }
+
+/* Formulário de denúncia */
+#report-form {
+    display: none; /* começa escondido */
+    position: fixed; /* fica sobre o mapa */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centraliza */
+    z-index: 9999;
+    flex-direction: column; /* itens empilhados verticalmente */
+    gap: 1rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90%;
+    overflow-y: auto; /* scroll se for alto demais */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Cabeçalho do formulário */
+#report-form .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#report-form .modal-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Botão de fechar */
+#report-form .close-modal {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+#report-form .close-modal:hover {
+    color: #333;
+}
+
+/* Campos do formulário */
+#report-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#report-form label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+#report-form input,
+#report-form select,
+#report-form textarea {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.875rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#report-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Área de coordenadas */
+#report-form .coordinates-display {
+    background-color: #f0f0f0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Botões de ação */
+#report-form button[type="submit"] {
+    padding: 0.75rem;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#report-form button[type="submit"]:hover {
+    background-color: #2563eb;
+}
+
+#report-form button.close-modal {
+    padding: 0.75rem;
+    background-color: #e5e7eb;
+    color: #333;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#report-form button.close-modal:hover {
+    background-color: #d1d5db;
+}
+
+/* Scroll se o conteúdo for muito grande */
+#report-form::-webkit-scrollbar {
+    width: 6px;
+}
+
+#report-form::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+
+.menu-btn { /* botão do menu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.sidebar { /* estilo da sidebar */
+    height: 100%;
+    width: 0; /* Começa fechada */
+
+    top: 0;
+    left: 0;
+    background-color: #111; /* Cor de fundo escura */
+    overflow-x: hidden; /* Esconde o conteúdo que transborda */
+    transition: 0.5s; /* Adiciona uma transição suave para a animação */
+    padding-top: 60px;
+    position: fixed;
+    z-index: 1000000000000000000000000000000000;
+}
+ 
+.sidebar a { /* Estilo dos links dentro da sidebar */
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    
+}
+
+.sidebar a:hover { 
+    color: #f1f1f1;
+}
+
+/* estilo para o botão de fechar */
+.sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar-content {
+    padding: 1.5rem;
+    color: white;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.close-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    border-radius: var(--radius);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-sidebar:hover {
+    background-color: var(--secondary);
+}
+
+.filter-section { /* seção de filtros */
+    margin-bottom: 2rem;
+}
+
+.filter-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.filter-select {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgb(34, 34, 34);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 0.875rem;
+}
+
+
+.popular-categories { /* seção de categorias populares */
+    margin-bottom: 2rem;
+}
+
+.popular-categories h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: left;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.875rem;
+}
+
+.category-btn:hover {
+    background-color: var(--secondary);
+}
+
+.category-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+
+.recent-reports h4 { /* seção de denúncias recentes */
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.reports-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.report-item {
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.report-item:hover {
+    border-color: var(--border-light);
+}
+
+.report-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.report-description {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.report-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+}
+
+/* Footer */
+.footer {
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 64px;
+    padding: 48px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.footer-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-brand-name {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.footer-description {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-title {
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #1a1a1a;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+@media (min-width: 640px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-copyright {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-legal-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-link:hover {
+    color: #1a1a1a;
+}
+
+#map {
+    width: 90%;
+    height: 800px; /* **Crucial:** Define a altura do mapa */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 1;
+    margin-left: 5%;
+    margin-right: 5%;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inframap - Conectando Comunidades Através da Tecnologia</title>
+    <meta name="description"
+        content="Inframap é uma plataforma colaborativa que conecta comunidades com infraestrutura local e recursos cívicos.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="preview.png">
+
+</head>
+
+<body>
+
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo">
+              <a href="index.html">
+                <img src="preview.png" alt="Logo do Inframap">
+              </a>
+            </div>
+
+            <h1 class="site-title">
+              <a href="index.html">Inframap</a>
+            </h1>
+
+          </div>
+          <nav class="nav">
+            <a href="Sobre.html" target="_blank" class="nav-link">Sobre</a>
+            <a href="Contato.html" target="_blank" class="nav-link">Contato</a>
+
+            <!-- Menu para usuários deslogados -->
+            <div class="auth-links" id="auth-links">
+              <a href="Login.html" class="nav-link">Entrar</a>
+              <a class="nav-link">|</a>
+              <a href="Cadastro.html" class="nav-link">Cadastrar</a>
+            </div>
+
+            <!-- Menu para usuários logados -->
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <button id="user-button" class="user-button">Olá, <span id="user-greeting"></span> ▼</button>
+              <div class="dropdown-content" id="dropdown-content">
+                <a href="minhaConta.html">Minha Conta</a>
+                <a href="denuncias.html">Minhas Denúncias</a>
+                <a href="#" id="logout-btn">Sair</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+    <section class="hero">
+        <img src="araucaria.jpg" alt="Inframap - Bairros conectados e infraestrutura cívica" class="hero-image">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2 class="hero-title">Inframap</h2>
+                <p class="hero-subtitle">Visualize e reporte problemas da sua cidade com facilidade.</p>
+                <a href="mapa.html" class="btn-map">Ir para o Mapa</a>
+            </div>
+        </div>
+    </section>
+
+
+    <main class="main">
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Bem-vindo ao Inframap</h2>
+                    <p class="section-description">
+                        InfraMap é uma plataforma colaborativa onde os cidadãos podem registrar e acompanhar denúncias
+                        sobre problemas urbanos, como buracos nas ruas, postes sem energia, falta de iluminação e outras
+                        demandas da cidade. Nosso objetivo é dar voz à comunidade e facilitar a comunicação entre
+                        moradores e órgãos responsáveis, promovendo melhorias e mais qualidade de vida para todos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="neighborhoods" class="neighborhoods-section">
+            <div class="container">
+                <h2 class="section-title text-center">Bairros da Cidade</h2>
+
+                <div class="neighborhoods-grid">
+                    <div class="neighborhood-card">
+                        <h3 class="card-title">Centro</h3>
+                        <p class="card-description">
+                            Ruas movimentadas repletas de comércios, cafés e serviços essenciais. Um espaço dinâmico que
+                            concentra a vida administrativa, cultural e social da cidade.
+                        </p>
+                    </div>
+
+                    <div class="neighborhood-card">
+                        <h3 class="card-title">Capela Velha</h3>
+                        <p class="card-description">
+                            Áreas residenciais tranquilas misturadas com pontos de comércio local. Um bairro que une
+                            tradição e crescimento, acolhendo famílias e novas oportunidades.
+                        </p>
+                    </div>
+
+                    <div class="neighborhood-card">
+                        <h3 class="card-title">Shangri-lá</h3>
+                        <p class="card-description">
+                            Avenidas amplas cercadas por residências modernas e áreas verdes. Um local que transmite
+                            harmonia, oferecendo praticidade e qualidade de vida.
+                        </p>
+
+                    </div>
+
+                    <div class="neighborhood-card">
+                        <h3 class="card-title">Costeira</h3>
+                        <p class="card-description">
+                            Um bairro em constante desenvolvimento, marcado pela diversidade de serviços e pela presença
+                            de indústrias. Espaço que reflete o progresso e a força econômica de Araucária.
+                        </p>
+                    </div>
+
+                    <div class="neighborhood-card">
+                        <h3 class="card-title">Tupy</h3>
+                        <p class="card-description">
+                            Comunidade acolhedora com ruas tranquilas e atmosfera familiar. Um retrato da simplicidade e
+                            da vida em comunidade, repleto de vizinhança solidária.
+                        </p>
+                    </div>
+
+                    <div class="neighborhood-card">
+                        <h3 class="card-title">Iguaçu</h3>
+                        <p class="card-description">
+                            Ruas arborizadas e praças bem cuidadas, cercadas por residências acolhedoras e pequenos
+                            comércios. Um bairro que transmite tranquilidade, ideal para famílias e momentos de
+                            convivência.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Denuncie e Faça a Diferença</h2>
+                    <p class="cta-description">
+                        No InfraMap você pode denunciar facilmente problemas da sua cidade, como buracos nas ruas ou
+                        falta de iluminação. Clique em Saiba Mais para entender como funciona ou em Começar para
+                        registrar sua denúncia agora mesmo.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="mapa.html" class="btn btn-primary">Começar</a>
+                        <a href="comofunciona.html" class="btn btn-secondary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo-section">
+                        <div class="footer-logo">
+                            <img src="preview.png" alt="icone">
+                        </div>
+                        <span class="footer-brand-name">Inframap</span>
+                    </div>
+                    <p class="footer-description">
+                        Conectando comunidades através de tecnologia cívica inovadora e soluções colaborativas de
+                        infraestrutura.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Plataforma</h4>
+                    <ul class="footer-links">
+                        <li><a href="comofunciona.html" target="_blank" class="footer-link">Como Funciona</a></li>
+                        <li><a href="Recursos.html" target="_blank" class="footer-link">Recursos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Comunidade</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://discord.gg/ZUr34wJuPr" target="_blank" class="footer-link">Suporte</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Conectar</h4>
+                    <ul class="footer-links">
+                        <li><a href="Contato.html" target="_blank" class="footer-link">Contato</a></li>
+                        <li><a href="https://www.instagram.com/inframaparaucaria/" target="_blank"
+                                class="footer-link">Redes Sociais</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Inframap. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="Politica.html" target="_blank" class="footer-legal-link">Privacidade</a>
+                    <a href="Termos.html" target="_blank" class="footer-legal-link">Termos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Supabase normal, sem type="module" -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="menuAuth.js"></script>
+
+
+</body>
+
+</html>

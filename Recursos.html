@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inframap - Termos</title>
+  <meta name="description" content="Inframap é uma plataforma colaborativa que conecta comunidades com infraestrutura local e recursos cívicos.">
+  <link rel="stylesheet" href="Recursos.css">
+  <link rel="icon" type="image" href="TCC logo.png">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo">
+              <a href="index.html">
+                <img src="preview.png" alt="Logo do Inframap">
+              </a>
+            </div>
+
+            <h1 class="site-title">
+              <a href="index.html">Inframap</a>
+            </h1>
+
+          </div>
+          <nav class="nav">
+            <a href="Sobre.html" target="_blank" class="nav-link">Sobre</a>
+            <a href="Contato.html" target="_blank" class="nav-link">Contato</a>
+
+            <!-- Menu para usuários deslogados -->
+            <div class="auth-links" id="auth-links">
+              <a href="Login.html" class="nav-link">Entrar</a>
+              <a class="nav-link">|</a>
+              <a href="Cadastro.html" class="nav-link">Cadastrar</a>
+            </div>
+
+            <!-- Menu para usuários logados -->
+            <div class="user-dropdown" id="user-dropdown" style="display: none;">
+              <button id="user-button" class="user-button">Olá, <span id="user-greeting"></span> ▼</button>
+              <div class="dropdown-content" id="dropdown-content">
+                <a href="minhaConta.html">Minha Conta</a>
+                <a href="denuncias.html">Minhas Denúncias</a>
+                <a href="#" id="logout-btn">Sair</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+ <!-- ================= CONTEÚDO CENTRAL ================= -->
+  <main class="features">
+    <section class="features-section">
+      <h2>1. Cadastro e Login</h2>
+      <p>
+        O Inframap conta com um sistema de autenticação seguro. O usuário realiza cadastro com verificação por e-mail,
+        garantindo confiabilidade e segurança dos dados.
+      </p>
+    </section>
+
+    <section class="features-section">
+      <h2>2. Reporte de Problemas</h2>
+      <p>
+        Os usuários podem registrar problemas urbanos por meio de um formulário completo, incluindo nome, tipo de problema,
+        data e hora, meios de contato e fotos ilustrativas.
+      </p>
+    </section>
+
+    <section class="features-section">
+      <h2>3. Filtro de Problemas</h2>
+      <p>
+        O sistema disponibiliza filtros para exibir apenas os tipos de problemas desejados.
+        Além da localização no mapa, é possível visualizar descrição, data e hora e autor do reporte.
+      </p>
+    </section>
+
+    <section class="features-section">
+      <h2>4. Localização do Usuário</h2>
+      <p>
+        O Inframap mostra a posição aproximada do usuário diretamente no mapa, facilitando a interação e a navegação
+        entre os problemas reportados na região.
+      </p>
+    </section>
+
+    <section class="features-section">
+      <h2>5. Banco de Dados Integrado</h2>
+      <p>
+        Todas as informações são armazenadas em tempo real no <b>Supabase</b>, oferecendo escalabilidade,
+        confiabilidade e integração eficiente.
+      </p>
+    </section>
+
+    <section class="features-section">
+      <h2>6. Experiência do Usuário</h2>
+      <p>
+        O design do Inframap é simples e intuitivo, priorizando clareza e acessibilidade
+        para que qualquer usuário consiga interagir facilmente com os recursos.
+      </p>
+    </section>
+  </main>
+ <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo-section">
+            <div class="footer-logo"><img src="TCC logo.png" alt="icone"></div>
+            <span class="footer-brand-name">Inframap</span>
+          </div>
+          <p class="footer-description">
+            Conectando comunidades através de tecnologia cívica inovadora e soluções colaborativas.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Plataforma</h4>
+          <ul class="footer-links">
+            <li><a href="comofunciona.html" class="footer-link">Como Funciona</a></li>
+            <li><a href="Recursos.html" class="footer-link">Recursos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Comunidade</h4>
+          <ul class="footer-links">
+            <li><a href="https://discord.gg/ZUr34wJuPr" class="footer-link">Suporte</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Conectar</h4>
+          <ul class="footer-links">
+            <li><a href="Contato.html" class="footer-link">Contato</a></li>
+            <li><a href="https://www.instagram.com/inframaparaucaria/" class="footer-link">Redes Sociais</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 Inframap. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="Politica.html" class="footer-legal-link">Privacidade</a>
+          <a href="Termos.html" class="footer-legal-link">Termos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="menuAuth.js"></script>
+</body>
+</html>

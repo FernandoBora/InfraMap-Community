@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inframap</title>
+    <link rel="stylesheet" href="mapa.css">
+    <!--Esse bagulho inicia e puxa o mapa tlgd-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="icon" type="image" href="preview.png">
+</head>
+<body>
+      <!--Header--> 
+    <header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-section">
+                <button class="menu-btn" id="menuBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
+                <!-- Barra lateral -->
+                <div class="sidebar" id="mySidebar">
+                    <div class="sidebar-content">
+                        <div class="sidebar-header">
+                            <h3>Filtros</h3>
+                        </div>
+
+                        <!-- categorias -->
+                        <div class="filter-section">
+                            <label for="categoryFilter">Filtrar por categoria:</label>
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="">Todas as categorias</option>
+                                <option value="buraco">🕳️ Buraco na via</option>
+                                <option value="iluminacao">💡 Iluminação pública</option>
+                                <option value="lixo">🗑️ Lixo irregular</option>
+                                <option value="seguranca">🚨 Segurança pública</option>
+                                <option value="entulho">🏗️ Entulho</option>
+                                <option value="transporte">🚌 Transporte público</option>
+                                <option value="agua_esgoto">🚰 Água e esgoto</option>
+                                <option value="calcada">🚶 Calçada danificada</option>
+                                <option value="arvore">🌳 Árvore/Poda</option>
+                                <option value="outros">❓ Outros</option>
+                            </select>
+                        </div>
+
+                        <!-- populares -->
+                        <div class="popular-categories">
+                            <h4>Categorias Populares</h4>
+                            <div class="category-buttons">
+                                <button class="category-btn" data-category="buraco">
+                                    <span class="category-icon">🕳️</span> Buracos na via
+                                </button>
+                                <button class="category-btn" data-category="iluminacao">
+                                    <span class="category-icon">💡</span> Iluminação pública
+                                </button>
+                                <button class="category-btn" data-category="lixo">
+                                    <span class="category-icon">🗑️</span> Lixo irregular
+                                </button>
+                                <button class="category-btn" data-category="calcada">
+                                    <span class="category-icon">🚶</span> Calçadas
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- relatórios recentes -->
+                        <div class="recent-reports">
+                            <h4>Relatórios Recentes</h4>
+                            <div id="reportsList" class="reports-list">
+                                <div class="report-item">
+                                    <div class="report-title">cocoxixi</div>
+                                    <div class="report-description">buracao na calçada</div>
+                                    <div class="report-meta">
+                                        <span>Calçada danificada</span>
+                                        <span>19/09/2025</span>
+                                    </div>
+                                </div>
+                                <div class="report-item">
+                                    <div class="report-title">Buraco grande na Rua Principal</div>
+                                    <div class="report-description">Buraco de aproximadamente 1 metro...</div>
+                                    <div class="report-meta">
+                                        <span>Buraco na via</span>
+                                        <span>18/09/2025</span>
+                                    </div>
+                                </div>
+                                <div class="report-item">
+                                    <div class="report-title">Poste queimado na Rua das Flores</div>
+                                    <div class="report-description">Poste de luz queimado há mais de uma semana...</div>
+                                    <div class="report-meta">
+                                        <span>Iluminação pública</span>
+                                        <span>17/09/2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="close-btn">&times;</a>
+                </div>
+
+                <div class="logo">
+                    <img src="preview.png">
+                </div>
+                <h1 class="site-title">Inframap</h1>
+            </div>
+
+            <!-- NAVIGATION -->
+            <nav class="nav">
+                <a href="Sobre.html" target="_blank" class="nav-link">Sobre</a>
+                <a href="Contato.html" target="_blank" class="nav-link">Contato</a>
+
+                <!-- Menu para usuários deslogados -->
+                <div class="auth-links" id="auth-links">
+                    <a href="Login.html" class="nav-link">Entrar</a>
+                    <a class="nav-link">|</a>
+                    <a href="Cadastro.html" class="nav-link">Cadastrar</a>
+                </div>
+
+                <!-- Menu para usuários logados -->
+                <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                    <button id="user-button" class="user-button">Olá, <span id="user-greeting"></span> ▼</button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="minhaConta.html">Minha Conta</a>
+                        <a href="denuncias.html">Minhas Denúncias</a>
+                        <a href="#" id="logout-btn">Sair</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Script da barra lateral -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const sidebar = document.getElementById('mySidebar');
+            const closeBtn = sidebar.querySelector('.close-btn');
+
+            menuBtn.addEventListener('click', function() {
+                sidebar.style.width = '250px';
+            });
+
+            closeBtn.addEventListener('click', function() {
+                sidebar.style.width = '0';
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!sidebar.contains(event.target) && !menuBtn.contains(event.target)) {
+                    sidebar.style.width = '0';
+                }
+            });
+        });
+    </script>
+</header>
+
+    <main>
+        <div class="mapatlgd">
+        <button class="report-now-btn" id="reportNowBtn">Relatar na Minha Localização</button>
+        <div id="map"></div> <!-- é a área do mapa-->
+        
+        <form id="report-form"><!-- aqui inicia o formulário de denuncia-->
+            <div class="modal-header">
+                <h2>Relatar Problema</h2>
+                <button type="button" class="close-modal">×</button>
+            </div>
+            <div class="coordinates-display" id="coordinatesDisplay">Coordenadas: Clique no mapa para selecionar</div>
+            <div class="form-group">
+                <label for="coordinates">Coordenadas (Lat, Lng)</label> <!--area de coordenadas, o js vai adicionar o valor das coordenadas de onde vc clicou tlgd-->
+                <input type="text" name="coordinates" readonly><!--area onde as coordenadas ficam-->
+            </div>
+            <div class="form-group">
+                <label for="title">Título do problema:</label>
+                <input type="text" name="title">
+            </div>
+            <div class="form-group"> <!--Área de seleção do tipo do problema-->
+                <label for="category">Categoria do problema:</label>
+                <select name="category">
+                    <option value="">Selecione uma categoria</option>
+                    <option value="buraco">🕳️ Buraco na via</option>
+                    <option value="iluminacao">💡 Iluminação pública</option>
+                    <option value="lixo">🗑️ Lixo irregular</option>
+                    <option value="seguranca">🚨 Segurança pública</option>
+                    <option value="entulho">🏗️ Entulho</option>
+                    <option value="transporte">🚌 Transporte público</option>
+                    <option value="agua_esgoto">🚰 Água e esgoto</option>
+                    <option value="calcada">🚶 Calçada danificada</option>
+                    <option value="arvore">🌳 Árvore/Poda</option>
+                    <option value="outros">❓ Outros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea name="description"></textarea>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="date">Data e hora do problema</label> <!-- data e hora que aparecem sozinhas por sina haha!-->
+                <input type="datetime-local" name="date" readonly>
+            </div>
+            <div class="form-group">
+                <label for="photo">Foto (opcional):</label>
+                <input type="file" name="photo" accept="image/*">
+            </div>
+            <div class="form-group">
+                <button type="button" class="close-modal">Cancelar</button>
+                <button type="submit">Enviar Relatório</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer"> <!--rodapé tlgd-->
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo-section">
+                    <div class="footer-logo">
+                        <img src="preview.png" alt="Inframap Logo">
+                    </div>
+                    <h3 class="footer-brand-name">Inframap</h3>
+                </div>
+                <p class="footer-description">Conectando comunidades através de tecnologia cívica inovadora e soluções colaborativas de infraestrutura.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Plataforma</h4>
+                <ul class="footer-links">
+                    <li><a href="comofunciona.html" class="footer-link">Como Funciona</a></li>
+                    <li><a href="Recursos.html" class="footer-link">Recursos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Comunidade</h4>
+                <ul class="footer-links">
+                    <li><a href="https://discord.gg/ZUr34wJuPr" class="footer-link">Suporte</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Conectar</h4>
+                <ul class="footer-links">
+                    <li><a href="Contato.html" class="footer-link">Contato</a></li>
+                    <li><a href="https://www.instagram.com/inframaparaucaria/" class="footer-link">Redes Sociais</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p class="footer-copyright">© 2025 Inframap. Todos os direitos reservados.</p>
+            <div class="footer-legal">
+                <a href="Politica.html" class="footer-legal-link">Privacidade</a>
+                <a href="Termos.html" class="footer-legal-link">Termos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="mapa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="menuAuth.js"></script>
+</body>
+</html>
